@@ -1,18 +1,24 @@
 body {
-  background-color: ;
+  background-color: white;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00b7ff;
+  color: black;
 }
 
-.container {
-  
-  
-}
-
-.img{
+.img {
   margin-top: 100px;
+}
+a:hover {
+  color: red;
+}
+
+.title {
+  font-size: 2vw;
+  font-family: cursive, sans-serif;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
 }
