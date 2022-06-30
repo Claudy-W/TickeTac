@@ -2,10 +2,39 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="offset-lg-2"><h4 >One-way tickets:</h4></div>
+    <div class="container">
+
+      
+      <div class="row ">
+<form class="offset-lg-3">
+
+        
+  <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="From: Paris, Marseille..">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="To: Lille, Nantes..">
+    </div>
+    <button type="button" class="btn btn-danger offset-col-10">Go</button>
+    </div>
+  </div>
+</form>
+       
+    </div>
+  
+    <div class="img offset-lg-3" >
+    <img src="/images/landmark.png" width="400px" alt="">
+    </div>
   </body>
 </html>
