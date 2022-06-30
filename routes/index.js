@@ -96,13 +96,35 @@ router.get('/result', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+//ROUTE POUR LA PAGE LOGIN
 router.get('/', function(req, res, next) {
   res.render('index', {});
 });
 
+
 //ROUTE POUR LA PAGE HOMEPAGE
 router.get('/homepage', function(req, res, next) {
   res.render('homepage', {});
+});
+
+//ROUTE POUR LA PAGE ERREUR
+router.get('/error', function(req, res, next) {
+  res.render('error', {});
+});
+
+//ROUTE POUR LA PAGE TICKET
+router.get('/ticket', function(req, res, next) {
+  res.render('ticket', {});
+});
+
+//ROUTE POUR LA PAGE BASKET
+router.get('/basket', function(req, res, next) {
+  res.render('basket', {});
+});
+
+//ROUTE POUR LA PAGE HISTORY
+router.get('/history', function(req, res, next) {
+  res.render('history', {});
 });
 
 module.exports = router;
