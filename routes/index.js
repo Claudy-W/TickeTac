@@ -96,8 +96,13 @@ router.get('/result', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/login', function(req, res, next) {
-  res.render('login', {});
+router.get('/', function(req, res, next) {
+  res.render('index', {});
+});
+
+//ROUTE POUR LA PAGE HOMEPAGE
+router.get('/homepage', function(req, res, next) {
+  res.render('homepage', {});
 });
 
 module.exports = router;
