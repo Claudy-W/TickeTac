@@ -11,7 +11,7 @@ var options = {
  };
 
 // --------------------- BDD -----------------------------------------------------
-mongoose.connect('mongodb+srv://XXXXXXXX:*********@XXXXXXXX-0hsfc.mongodb.net/Ticketac?retryWrites=true',
+mongoose.connect('mongodb+srv://admin:FkGxGgVtBeUp7Tsk@cluster0.nptct.mongodb.net/miam?retryWrites=true&w=majority',
    options,
    function(err) {
     if (err) {
@@ -94,6 +94,10 @@ router.get('/result', function(req, res, next) {
 
 
   res.render('index', { title: 'Express' });
+});
+
+router.get('/login', function(req, res, next) {
+  res.render('login', {});
 });
 
 module.exports = router;

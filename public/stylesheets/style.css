@@ -4,5 +4,17 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: black;
+  
+}
+a:hover {
+color : red;
+}
+
+.title {
+  font-size: 2vw ;
+  font-family: cursive, sans-serif  ;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
 }
