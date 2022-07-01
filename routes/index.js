@@ -3,6 +3,8 @@ var router = express.Router();
 
 const mongoose = require('mongoose');
 
+var journeyModel = require('../models/journeys');
+
 // useNewUrlParser ;)
 var options = {
   connectTimeoutMS: 5000,
@@ -11,7 +13,7 @@ var options = {
  };
 
 // --------------------- BDD -----------------------------------------------------
-mongoose.connect('mongodb+srv://admin:FkGxGgVtBeUp7Tsk@cluster0.nptct.mongodb.net/miam?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://admin:FkGxGgVtBeUp7Tsk@cluster0.nptct.mongodb.net/ticketac?retryWrites=true&w=majority',
    options,
    function(err) {
     if (err) {
@@ -22,20 +24,12 @@ mongoose.connect('mongodb+srv://admin:FkGxGgVtBeUp7Tsk@cluster0.nptct.mongodb.ne
    }
 );
 
-var journeySchema = mongoose.Schema({
-  departure: String,
-  arrival: String,
-  date: Date,
-  departureTime: String,
-  price: Number,
-});
 
-var journeyModel = mongoose.model('journeys', journeySchema);
 
 var city = ["Paris","Marseille","Nantes","Lyon","Rennes","Melun","Bordeaux","Lille"]
 var date = ["2018-11-20","2018-11-21","2018-11-22","2018-11-23","2018-11-24"]
 
-
+//--------------------------- BDD --------------------------------------------
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -95,6 +89,9 @@ router.get('/result', function(req, res, next) {
 
   res.render('index', { title: 'Express' });
 });
+
+// --------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
 
 //ROUTE POUR LA PAGE LOGIN
 router.get('/', function(req, res, next) {
