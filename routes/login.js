@@ -2,10 +2,27 @@
 var express = require('express');
 var router = express.Router();
 var userModel = require('../models/users')
- 
- 
-//route sign-up
+
+//route Sign-in
+router.post('/sign-in', async function(req, res, next) {
+  var errorMsg = "Vous n'êtes pas encore voyageur. Inscrivez-vous !"
+  var user = await userModel.findOne( { email : req.body.email } )
+  if (user !== null) {
+    if (user.password == req.body.password && user.email == req.body.email) {
+      res.redirect('/homepage') ;
+      req.session.newUserId = user._id
+      req.session.email = user.email
+      console.log('session', req.session)
+    } else{
+      res.render('index', { title : 'TickeTac', errorMsg }) }
+  } else {
+  res.redirect('/')}
+})
+ ;
+
+//route Sign-up
 router.post('/sign-up', async function(req, res, next) {
+  console.log('body', req.body)
   var newUser = new userModel({
     lastname: req.body.lastname,
     firstname: req.body.firstname,
@@ -13,7 +30,7 @@ router.post('/sign-up', async function(req, res, next) {
     password: req.body.password,
  });
  
- req.session.username = req.body.username
+ req.session.email = req.body.email
  
  var userSaved = await newUser.save();
  
@@ -23,31 +40,7 @@ req.session.newUserId = newUserId
  
 console.log('newUserId', newUserId)
  
-  res.redirect('/weather');
-});
- 
-//route Sign-in
-router.post('/sign-in', async function(req, res, next) {
-  var errorMsg = "Vous n'êtes pas sur la liste, ça va pas être possible."
-  var user = await userModel.findOne( { email : req.body.email } )
-  if (user !== null) {
-    if (user.password == req.body.password && user.email == req.body.email) {
-      res.redirect('/weather') ;
-      req.session.newUserId = user._id
-      req.session.username = user.username
-      console.log(req.session)
-    } else{
-      res.render('login', { title : 'WeatherApp', errorMsg }) }
-  } else {
-  res.redirect('/')}
-})
- ;
- 
- //route pour la déconnexion
- router.get('/logout', function(req, res, next) {
-  var errorMsg = ''
-  req.session =''
-  res.redirect('/');
+  res.render('homepage');
 });
  
 module.exports = router;
