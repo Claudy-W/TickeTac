@@ -58,3 +58,15 @@ a:hover {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
+.container-fluid{
+  width: 50%;
+}
+
+.rose{
+background-color: #F48FB1;
+}
+
+h1{
+  font-size: 20px;
+}

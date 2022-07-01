@@ -18,14 +18,61 @@
         <!-- HEADER-->
 
   
-            <div class="row ariane">
-                <nav aria-label="breadcrumb" class="col-12">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/">Shop</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Basket</li>
-                    </ol>
-                </nav>
-            </div>
+            <div class="container-fluid">
+
+         
+
+
+            <h1 class="col-12 mt-5 text-white offset-2">Mes billets</h1>
+
+            
+              <table class="table table-sm table-light">
+  <thead>
+    <tr>
+      <th scope="col">N°</th>
+      <th scope="col">Voyage</th>
+      <th scope="col">Date</th>
+      <th scope="col">Heure de départ</th>
+      <th scope="col">Prix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Paris / Lilles</td>
+      <td>02/08/2019</td>
+      <td>15H00</td>
+      <td>93 €</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Paris / Bordeaux</td>
+      <td>07/12/2019</td>
+      <td>19H00</td>
+      <td>125 €</td>
+    </tr>
+    <tr class="rose">
+      <th scope="row">3</th>
+      <td colspan="2">Total</td>
+      <td></td>
+      <td>218 €</td>
+    </tr>
+  </tbody>
+</table>
+                <div class="row">
+                    <div class="col-12 text-right">
+                        <form action="/create-checkout-session" method="POST">
+                          <button class="btn btn-outline-info btn-sm btn-checkout bg-danger"" type="submit">Valider</button>
+                        </form>
+                    </div>
+                </div>
+
+
+           
+            
+            
+                
+        </div>
 
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
