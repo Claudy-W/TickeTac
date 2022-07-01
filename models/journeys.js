@@ -10,4 +10,4 @@ var journeySchema = mongoose.Schema({
   
   var journeyModel = mongoose.model('journeys', journeySchema);
 
-  module.exports = journeyModel ;
+  module.exports = journeyModel ; 
