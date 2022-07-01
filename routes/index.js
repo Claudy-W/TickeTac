@@ -30,7 +30,7 @@ var journeySchema = mongoose.Schema({
   price: Number,
 });
 
-var journeyModel = mongoose.model('journey', journeySchema);
+var journeyModel = mongoose.model('journeys', journeySchema);
 
 var city = ["Paris","Marseille","Nantes","Lyon","Rennes","Melun","Bordeaux","Lille"]
 var date = ["2018-11-20","2018-11-21","2018-11-22","2018-11-23","2018-11-24"]
@@ -101,6 +101,15 @@ router.get('/', function(req, res, next) {
   res.render('index', {});
 });
 
+//ROUTE POUR LE SIGN-IN
+router.post('/', function(req, res, next) {
+  res.render('index', {});
+});
+
+//ROUTE POUR LE SIGN-UP
+router.get('/', function(req, res, next) {
+  res.render('index', {});
+});
 
 //ROUTE POUR LA PAGE HOMEPAGE
 router.get('/homepage', function(req, res, next) {
