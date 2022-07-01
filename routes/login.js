@@ -1,13 +1,14 @@
+
 var express = require('express');
 var router = express.Router();
 var userModel = require('../models/users')
  
  
-/* GET users listing. */
 //route sign-up
 router.post('/sign-up', async function(req, res, next) {
   var newUser = new userModel({
-    username: req.body.username,
+    lastname: req.body.lastname,
+    firstname: req.body.firstname,
     email: req.body.email,
     password: req.body.password,
  });

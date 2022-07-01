@@ -96,17 +96,11 @@ router.get('/result', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+// ---------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------
+
+
 //ROUTE POUR LA PAGE LOGIN
-router.get('/', function(req, res, next) {
-  res.render('index', {});
-});
-
-//ROUTE POUR LE SIGN-IN
-router.post('/', function(req, res, next) {
-  res.render('index', {});
-});
-
-//ROUTE POUR LE SIGN-UP
 router.get('/', function(req, res, next) {
   res.render('index', {});
 });
